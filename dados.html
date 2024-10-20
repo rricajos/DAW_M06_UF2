@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define la codificación de caracteres para el documento -->
+    <meta charset="UTF-8">
+
+    <!-- Configura el viewport para que el contenido se adapte al ancho de la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+    <title>Juego de Dados</title>
+
+    <!-- Vinculamos el archivo CSS que contiene los estilos de la página -->
+    <link rel="stylesheet" href="dados.css">
+
+    <!-- Vinculamos el archivo JavaScript que contiene la lógica del juego; se carga de manera diferida -->
+    <script src="dados.js" defer></script>
+
+    <!-- Enlace a Google Fonts para importar la fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Título principal de la página -->
+    <h1>Simulador de Dados</h1>
+    
+    <!-- Contenedor principal que agrupa los elementos del formulario y resultados -->
+    <div class="container">
+        
+        <!-- Sección para introducir el nombre del usuario -->
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Introduce tu nombre">
+        </div>
+
+        <!-- Sección para introducir el número del dado -->
+        <div>
+            <label for="numero">Número (1-6):</label>
+            <input type="number" id="numero" min="1" max="6" placeholder="Introduce un número entre 1 y 6">
+        </div>
+
+        <!-- Botón para lanzar el dado -->
+        <button id="lanzar">Lanzar Dado</button>
+
+        <!-- Elemento para mostrar el resultado del lanzamiento -->
+        <h2 id="resultado">🎲</h2>
+
+        <!-- Lista que mostrará los intentos realizados por el usuario -->
+        <ul id="intentos"></ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+/* Aplicar box-sizing a todos los elementos para incluir padding y bordes en las dimensiones totales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo general del cuerpo, con fondo en degradado, diseño centrado, altura completa de la ventana y sin overflow */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+  color: #444;
+}
+
+/* Estilos del título principal con animación de aparición desde arriba */
+h1 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+/* Animación personalizada para hacer que el título aparezca con un desvanecimiento y deslizamiento hacia abajo */
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Contenedor principal con fondo blanco, sombras, bordes redondeados y animación de deslizamiento */
+.container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  animation: slideIn 1s ease-in-out;
+  position: relative;
+  overflow-y: auto;
+  height: 80vh;
+}
+
+/* Animación para el contenedor que aparece desde abajo con opacidad */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(40px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Estilo para etiquetas de texto */
+label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Estilos para campos de texto y número con transiciones suaves en foco */
+input[type="text"],
+input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+/* Resaltar los campos en foco con un borde rojo */
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #ff5858;
+  outline: none;
+}
+
+/* Estilos para el botón con transición de color y escala en hover */
+button {
+  padding: 12px 20px;
+  background-color: #ff5858;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 10px;
+}
+
+/* Efecto de hover en el botón para agrandarse y cambiar de color */
+button:hover {
+  background-color: #ff4040;
+  transform: scale(1.05);
+}
+
+/* Estilo del segundo título para mostrar resultados del juego con animación */
+h2 {
+  margin-top: 20px;
+  color: #333;
+  font-size: 1.5rem;
+  animation: fadeInResult 1s ease-in-out;
+}
+
+/* Animación para el resultado que aparece con un ligero deslizamiento */
+@keyframes fadeInResult {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Lista de intentos, sin puntos de lista y con margen superior */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Estilos para los elementos de la lista con hover animado y sombreado */
+ul li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación de hover en la lista para mover los elementos hacia arriba */
+ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de las imágenes dentro de la lista con rotación en hover */
+ul li img {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto de rotación de las imágenes en hover */
+ul li:hover img {
+  transform: rotate(20deg);
+}
+
+/* Estilo para los intentos fallidos con fondo rojo claro y texto en rojo */
+ul li.red {
+  background-color: #ffdad6;
+  color: #ff5e5e;
+  font-weight: 600;
+}
+
+/* Estilo para el intento exitoso con fondo verde claro y texto en verde */
+ul li.green {
+  background-color: #e1ffe1;
+  color: #48a048;
+  font-weight: 600;
+}
+
+/* Media queries para hacer que el diseño sea responsive en pantallas pequeñas */
+@media (max-width: 600px) {
+  h1 {
+      font-size: 2.2rem;
+  }
+
+  .container {
+      padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+      padding: 8px;
+      font-size: 1rem;
+  }
+
+  button {
+      padding: 10px;
+      font-size: 1rem;
+  }
+
+  ul li {
+      font-size: 1rem;
+      padding: 8px;
+  }
+
+  ul li img {
+      width: 30px;
+      height: 30px;
+  }
+}
